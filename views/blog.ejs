@@ -1,0 +1,30 @@
+<%- include("partials/header.ejs") %>
+    <% let todaysDate=new Date(); %>
+        <div class="container">
+            <div class="row g-5 mt-4">
+                <div class="col-md-9 d-flex flex-column gap-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <%= blogWithId.ttl %>
+                            </h5>
+                            <p class="card-text">
+                                <%= blogWithId.dsc %>
+                            </p>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col-md-3">
+                    <div class="position-sticky" style="top: 2rem;">
+                        <div class="p-4 mb-3 bg-body-tertiary rounded d-flex flex-column gap-3">
+                            <h4 class="fst-italic">Actions</h4>
+                            <a type="button" href="/delete/<%= blogWithId.id %>"
+                                class="btn btn-danger w-auto">Delete</a>
+                            <A type="button" href="/edit/<%= blogWithId.id %>" class="btn btn-primary w-auto">Edit</A>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <%- include("partials/footer.ejs") %>
